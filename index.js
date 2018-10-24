@@ -1,6 +1,8 @@
 exports.decorateConfig = (config) => {
+  const userFontFamily = config.hasOwnProperty('predawn') && config.predawn.fontFamily;
+
   return Object.assign({}, config, {
-    fontFamily: '"Source Code Pro", monospace',
+    fontFamily: userFontFamily || '"Source Code Pro", monospace',
     cursorColor: '#f18260',
     foregroundColor: '#dddddd',
     backgroundColor: '#282828',
